@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Library, Menu, X } from 'lucide-react';
 import { ModeToggle } from './ModeToggle';
 import { useTheme } from '../ThemeProvider/ThemeProvider';
 import { cn } from '@/lib/utils';
@@ -13,14 +13,11 @@ const ResponsiveNavbar = () => {
   };
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Portfolio', href: '#portfolio' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'All Books', href: '/' },
+    { name: 'Add Book', href: '/AddBook' },
+    { name: 'Borrow Summary', href: '/BorrowSummary' }
   ];
 
-  // Function to get the actual theme (handles system theme)
   const getActualTheme = () => {
     if (theme === 'system') {
       return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
@@ -37,16 +34,16 @@ const ResponsiveNavbar = () => {
     })}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
+       
           <div className="flex-shrink-0 flex items-center">
             <div className={cn("text-2xl font-bold text-blue-600", {
               "text-blue-400": actualTheme === "dark"
             })}>
-              YourLogo
+              <Library className={`h-10 w-10 transition-all ${actualTheme === "dark" ? "text-white" : "text-black"}`} />
             </div>
           </div>
 
-          {/* Desktop Navigation */}
+          
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               {navItems.map((item) => (
@@ -64,14 +61,14 @@ const ResponsiveNavbar = () => {
             </div>
           </div>
 
-          {/* Desktop User Menu */}
+          
           <div className="hidden md:block">
             <div className="ml-4 flex items-center md:ml-6">
               <ModeToggle />
             </div>
           </div>
 
-          {/* Mobile menu button */}
+          
           <div className="md:hidden flex items-center gap-3">
             <div>
               <ModeToggle />
@@ -94,7 +91,7 @@ const ResponsiveNavbar = () => {
         </div>
       </div>
 
-      {/* Mobile Navigation Menu */}
+     
       {isMenuOpen && (
         <div className="md:hidden">
           <div className={cn("px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t", {
