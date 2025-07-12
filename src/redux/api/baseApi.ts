@@ -6,9 +6,10 @@ export const baseApi = createApi({
     reducerPath: "baseApi",
     baseQuery: fetchBaseQuery({ baseUrl: import.meta.env.VITE_BACKEND_URL }),
     tagTypes: ["books", "borrow"],
-    refetchOnMountOrArgChange: false,
+    refetchOnMountOrArgChange: false, 
     refetchOnReconnect: true,
-    refetchOnFocus: false, 
+    refetchOnFocus: false,
+    keepUnusedDataFor: 60,
     endpoints: (builder) => ({
         getAllBooks : builder.query({
             query : () => "/books?sort=desc&limit=1000",
