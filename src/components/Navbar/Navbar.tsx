@@ -39,7 +39,9 @@ const ResponsiveNavbar = () => {
             <div className={cn("text-2xl font-bold text-blue-600", {
               "text-blue-400": actualTheme === "dark"
             })}>
+               <a href='/'>
               <Library className={`h-10 w-10 transition-all ${actualTheme === "dark" ? "text-white" : "text-black"}`} />
+              </a>
             </div>
           </div>
 

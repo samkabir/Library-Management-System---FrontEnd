@@ -1,6 +1,8 @@
 import { Outlet } from 'react-router'
 import './App.css'
 import ResponsiveNavbar from './components/Navbar/Navbar'
+import { Toaster } from 'sonner'
+import Footer from './components/Footer/Footer'
 
 function App() {
 
@@ -12,6 +14,9 @@ function App() {
           <Outlet />
         </div>
       </div>
+
+      <Footer />
+      <Toaster position="bottom-right" richColors expand={true} />
     </>
   )
 }
