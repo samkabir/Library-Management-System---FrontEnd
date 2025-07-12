@@ -24,7 +24,7 @@ export default function TableSkeleton({
   const getColumnWidth = (index: number) => {
     if (columnWidths[index]) return columnWidths[index];
     if (showActionColumn && index === totalColumns - 1) return "w-20"; 
-    return "w-full";
+    return "w-full ";
   };
 
   const getHeaderLabel = (index: number) => {
@@ -38,9 +38,9 @@ export default function TableSkeleton({
       <Table>
         {showHeader && (
           <TableHeader>
-            <TableRow>
+            <TableRow className="h-12 bg-gray-200 dark:bg-gray-800">
               {Array.from({ length: totalColumns }).map((_, index) => (
-                <TableHead key={index} className={getColumnWidth(index)}>
+                <TableHead key={index} className={`text-lg font-bold text-gray-900 dark:text-white bg-gray-200 dark:bg-gray-800 ${getColumnWidth(index)}`}>
                   {headerLabels.length > 0 ? (
                     getHeaderLabel(index)
                   ) : (

@@ -66,17 +66,17 @@ export default function AllBooks() {
       <h1 className="text-white text-4xl mb-4">All Books</h1>
       <div className="rounded-md border border-gray-600 overflow-x-auto">
         <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead>Title</TableHead>
-              <TableHead>Author</TableHead>
-              <TableHead>Genre</TableHead>
-              <TableHead>ISBN</TableHead>
-              <TableHead>Copies</TableHead>
-              <TableHead>Availability</TableHead>
-              <TableHead>Actions</TableHead>
+            <TableHeader>
+            <TableRow className="h-12 bg-gray-200 dark:bg-gray-800">
+              <TableHead className="text-lg font-bold text-gray-900 dark:text-white bg-gray-200 dark:bg-gray-800">Title</TableHead>
+              <TableHead className="text-lg font-bold text-gray-900 dark:text-white bg-gray-200 dark:bg-gray-800">Author</TableHead>
+              <TableHead className="text-lg font-bold text-gray-900 dark:text-white bg-gray-200 dark:bg-gray-800">Genre</TableHead>
+              <TableHead className="text-lg font-bold text-gray-900 dark:text-white bg-gray-200 dark:bg-gray-800">ISBN</TableHead>
+              <TableHead className="text-lg font-bold text-gray-900 dark:text-white bg-gray-200 dark:bg-gray-800">Copies</TableHead>
+              <TableHead className="text-lg font-bold text-gray-900 dark:text-white bg-gray-200 dark:bg-gray-800">Availability</TableHead>
+              <TableHead className="text-lg font-bold text-gray-900 dark:text-white bg-gray-200 dark:bg-gray-800">Actions</TableHead>
             </TableRow>
-          </TableHeader>
+            </TableHeader>
 
           <TableBody>
             {books.data.map((book: Book, index: number) => (

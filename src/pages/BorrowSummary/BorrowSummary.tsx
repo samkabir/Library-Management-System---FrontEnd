@@ -11,8 +11,8 @@ export default function BorrowSummary() {
 })
         
         if (isLoading) {
-            return <div className="text-white text-2xl">
-
+            return <div className="p-4 h-screen">
+ <h1 className="text-white text-4xl mb-4">BorrowSummary</h1>
               <TableSkeleton
                       rows={12}
                       columns={3}
@@ -37,10 +37,10 @@ export default function BorrowSummary() {
             <div className="rounded-md border border-gray-600 overflow-x-auto">
                     <Table>
                       <TableHeader>
-                        <TableRow>
-                          <TableHead>Title</TableHead>
-                          <TableHead>ISBN</TableHead>
-                          <TableHead>Quantity</TableHead>
+                        <TableRow className="h-12 bg-gray-200 dark:bg-gray-800">
+                          <TableHead className="text-lg font-bold text-gray-900 dark:text-white bg-gray-200 dark:bg-gray-800">Title</TableHead>
+                          <TableHead className="text-lg font-bold text-gray-900 dark:text-white bg-gray-200 dark:bg-gray-800">ISBN</TableHead>
+                          <TableHead className="text-lg font-bold text-gray-900 dark:text-white bg-gray-200 dark:bg-gray-800">Quantity</TableHead>
                         </TableRow>
                       </TableHeader>
             

@@ -46,7 +46,7 @@ export default function BookForm() {
     <div className="p-4">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="space-y-4 max-w-xl mx-auto p-6  rounded-xl shadow"
+        className="space-y-4 max-w-4xl mx-auto p-6  rounded-xl shadow"
       >
      
         <div className="space-y-2">
@@ -78,14 +78,14 @@ export default function BookForm() {
         <div className="space-y-2">
           <Label htmlFor="genre">Genre</Label>
           <Select onValueChange={(value) => setValue("genre", value)} defaultValue="">
-            <SelectTrigger id="genre">
+            <SelectTrigger id="genre" className="w-full">
               <SelectValue placeholder="Select a genre" />
             </SelectTrigger>
             <SelectContent>
               {genres.map((genre) => (
-                <SelectItem key={genre} value={genre}>
-                  {genre}
-                </SelectItem>
+          <SelectItem key={genre} value={genre}>
+            {genre}
+          </SelectItem>
               ))}
             </SelectContent>
           </Select>
