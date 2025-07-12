@@ -78,7 +78,7 @@ export default function BorrowModal() {
 
   return (
     <Dialog open={open} onOpenChange={() => dispatch(closeBorrowModal())}>
-      <DialogContent className="bg-white dark:bg-gray-900 max-w-md">
+      <DialogContent className="bg-white dark:bg-gray-900 max-h-4/5 overflow-y-auto">
         <DialogHeader>
           <DialogTitle>Borrow Book</DialogTitle>
         </DialogHeader>
