@@ -10,7 +10,7 @@ function App() {
     <>
       <ResponsiveNavbar />
       <div className='grid grid-cols-12 gap-0 my-10'>
-        <div className='col-start-3 col-end-11'>
+        <div className='col-start-2 col-end-12'>
           <Outlet />
         </div>
       </div>

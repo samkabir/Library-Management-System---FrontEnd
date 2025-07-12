@@ -15,12 +15,13 @@ import BorrowModal from "@/components/Modal/BorrowModal/BorrowModal";
 import { toast } from "sonner";
 import { useNavigate } from "react-router";
 import type { Book } from "@/types";
+import TableSkeleton from "@/components/Skeleton/SkeletonTable";
 
 export default function AllBooks() {
   const { data: books = [], isLoading, isError, isSuccess } = useGetAllBooksQuery(undefined, {
     refetchOnMountOrArgChange: false,
     refetchOnReconnect: true,
-    refetchOnFocus: false, 
+    refetchOnFocus: false,
   });
 
   const dispatch = useDispatch();
@@ -42,16 +43,26 @@ export default function AllBooks() {
   }, [isSuccess, isError, books]);
 
   if (isLoading) {
-    return <div className="text-white text-2xl">Loading books...</div>;
+    return <div className="p-4">
+      <h1 className="text-white text-4xl mb-4">All Books</h1>
+      <TableSkeleton
+        rows={8}
+        columns={7}
+        showHeader={true}
+        showActionColumn={true}
+        headerLabels={["Title", "Author", "Genre", "ISBN", "Copies", "Availability", "Actions"]}
+        columnWidths={["w-1/3", "w-1/4", "w-1/6", "w-1/6", "w-1/6", "w-1/6", "w-20"]}
+      />
+    </div>;
   }
 
   if (isError) {
     return <div className="text-red-500 text-2xl">Error loading books</div>;
   }
- 
+
 
   return (
-    <div className="p-4">
+    <div className="p-4 mb-10">
       <h1 className="text-white text-4xl mb-4">All Books</h1>
       <div className="rounded-md border border-gray-600 overflow-x-auto">
         <Table>
@@ -70,9 +81,9 @@ export default function AllBooks() {
           <TableBody>
             {books.data.map((book: Book, index: number) => (
               <TableRow key={index} onClick={(e) => {
-                e.stopPropagation(); 
+                e.stopPropagation();
                 handleSingleClick(book)
-                }} className="cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700">
+              }} className="cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700">
                 <TableCell>{book.title}</TableCell>
                 <TableCell>{book.author}</TableCell>
                 <TableCell>{book.genre}</TableCell>
@@ -87,13 +98,12 @@ export default function AllBooks() {
                 </TableCell>
                 <TableCell>
                   <div className="flex gap-2">
-                    <Button variant="outline" size="sm" onClick={(e) => 
-                      {
-                        e.stopPropagation();
-                        dispatch(openUpdateModal({ ...book, id: book._id }));
-                      }
-                      
-                      }>
+                    <Button variant="outline" size="sm" onClick={(e) => {
+                      e.stopPropagation();
+                      dispatch(openUpdateModal({ ...book, id: book._id }));
+                    }
+
+                    }>
                       Edit Book
                     </Button>
                     <Button variant="destructive" size="sm" onClick={(e) => {

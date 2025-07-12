@@ -49,7 +49,7 @@ export default function BookForm() {
         className="space-y-4 max-w-xl mx-auto p-6  rounded-xl shadow"
       >
      
-        <div>
+        <div className="space-y-2">
           <Label htmlFor="title">Title</Label>
           <Input
             id="title"
@@ -62,7 +62,7 @@ export default function BookForm() {
         </div>
 
      
-        <div>
+        <div className="space-y-2">
           <Label htmlFor="author">Author</Label>
           <Input
             id="author"
@@ -75,7 +75,7 @@ export default function BookForm() {
         </div>
 
         
-        <div>
+        <div className="space-y-2">
           <Label htmlFor="genre">Genre</Label>
           <Select onValueChange={(value) => setValue("genre", value)} defaultValue="">
             <SelectTrigger id="genre">
@@ -96,7 +96,7 @@ export default function BookForm() {
         <input type="hidden" {...register("genre", { required: "Genre is required" })} />
 
       
-        <div>
+        <div className="space-y-2">
           <Label htmlFor="isbn">ISBN</Label>
           <Input
             id="isbn"
@@ -112,13 +112,13 @@ export default function BookForm() {
         </div>
 
        
-        <div>
+        <div className="space-y-2">
           <Label htmlFor="description">Description</Label>
           <Textarea id="description" {...register("description")} />
         </div>
 
        
-        <div>
+        <div className="space-y-2">
           <Label htmlFor="copies">Copies</Label>
           <Input
             type="number"

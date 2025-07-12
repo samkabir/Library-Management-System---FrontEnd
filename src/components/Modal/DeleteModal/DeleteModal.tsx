@@ -27,14 +27,21 @@ export default function DeleteBookModal() {
     console.log("Deleting book:", selectedBook);
     if (selectedBook) {
       deleteABook(selectedBook.id);
-      if (isSuccess) {
-        toast.success("Book Deleted");
-      } else if (isError) {
-        toast.success("Failed to Delete Book");
-      }
-      dispatch(closeDeleteModal());
     }
   };
+
+  useEffect(() => {
+    if (isSuccess) {
+      toast.success("Book Deleted");
+      dispatch(closeDeleteModal());
+    }
+  }, [isSuccess, dispatch]);
+
+  useEffect(() => {
+    if (isError) {
+      toast.error("Failed to Delete Book");
+    }
+  }, [isError]);
 
   useEffect(() => {
     let timer: NodeJS.Timeout;
