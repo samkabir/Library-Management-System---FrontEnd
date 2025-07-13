@@ -1,69 +1,42 @@
-# React + TypeScript + Vite
+# 📖 Library Management with Vite, React, TypeScript, ShadCN, Redux toolkit a RTK Query - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🎯 This project is a Library Management System using Vite, React, TypeScript, ShadCN, Redux toolkit a RTK Query. 
 
-Currently, two official plugins are available:
+## This is a Two Part Project => [Frontend]() and [Backend](https://library-management-system-backend-olive.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### ✨ Featues of this project
 
-## Expanding the ESLint configuration
+- 4 Routes, All Books, Add a Book, Borrow Summary and A single book page.
+- 3 Modals for Editing a book, Deleting a book and Borrowing a book.
+- Code Quality: Clean, readable code with meaningful names.
+- Error handling.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 🔧 Tech Stack
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Vite + React + Typescript
+- Tailwind + ShadCN
+- Redux Toolkit + RTK Query
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+### Visit this Website [Here]()
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### OR
+
+### Installation Setup
+
+1. Go to your preferred folder, and open terminal
+```
+git clone git@github.com:samkabir/Library-Management-System-FrontEnd.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2. Go to the repository folder and open terminal, and run
 ```
+npm install
+```
+
+3. Run the server
+```
+npm run dev
+```
+
+
+Implemented and developed by Samiul Kabir
